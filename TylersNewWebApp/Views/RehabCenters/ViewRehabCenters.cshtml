@@ -1,0 +1,42 @@
+﻿@model RehabCenters
+
+<h3>@Model.Name Information</h3>
+
+<style>
+body { background-image: url('https://i.imgur.com/bsVSmEf.jpg'); }
+</style>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>PhoneNumber</th>
+        <th>Website</th>
+        <th>Specialty</th>
+        <th>SpecialtyID</th>
+    </tr>
+    <tr>
+        <td>@Model.ID</td>
+        <td>@Model.Name</td>
+        <td>@Model.Address</td>
+        <td>@Model.PhoneNumber</td>
+        <td>@Model.Website</td>
+        <td>@Model.Specialty</td>
+        <td>@Model.SpecialtyID</td>
+    </tr>
+
+</table>
+
+
+<div style="display: block">
+    <a href="/RehabCenters/UpdateRehabCenters/@Model.ID">Update this RehabCenter</a>
+</div>
+
+<div style="display: block">
+    @using (Html.BeginForm("DeleteRehabCenters", "RehabCenters", "Post"))
+    {
+        <input type="hidden" asp-for="ID" value="@Model.ID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this RehabCenter" />
+    }
+</div>

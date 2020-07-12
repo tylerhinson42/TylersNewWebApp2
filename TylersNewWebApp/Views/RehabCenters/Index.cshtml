@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<RehabCenters>
+
+<h2>RehabCenters</h2>
+
+<div style="display: block">
+    <a href="/RehabCenters/InsertRehabCenters/">Create a New RehabCenter</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>PhoneNumber</th>
+        <th>Website</th>
+        <th>Specialty</th>
+        <th>SpecialtyID</th>
+    </tr>
+
+    @foreach (var rehabCenters in Model)
+    {
+        <tr>
+            <td><a href=/RehabCenters/ViewRehabCenters/@rehabCenters.ID>@rehabCenters.ID</a></td>
+            <td>@rehabCenters.Name</td>
+            <td>@rehabCenters.Address</td>
+            <td>@rehabCenters.PhoneNumber</td>
+            <td>@rehabCenters.Website</td>
+            <td>@rehabCenters.Specialty</td>
+            <td>@rehabCenters.SpecialtyID</td>
+        </tr>
+
+    }
+</table>
+
